@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- Title here -->
+		<title>QuikMemes</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- jQuery -->
+		<!script src="js/jquery.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+		<script src="jquery.ui.touch-punch.min.js"></script>
+		<script src="js/jquery.lazyload.js"></script>
+		<script type="text/javascript" src="jquery.memegenerator.js?1.5"></script>
+		<link rel="stylesheet" type="text/css" href="jquery.memegenerator.css">
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link href="//fonts.amplighter.com/css?family=Architects+Daughter|Cinzel|Open+Sans+Condensed:300|Playfair+Display|Poiret+One|Quicksand|IM+Fell+English|Oregano|Special+Elite|Spirax|Alfa+Slab+One|Luckiest+Guy|Changa+One" rel="stylesheet">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Portfolio CSS -->
+		<link href="css/prettyPhoto.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">	
+		<!-- Custom Less -->
+		<link href="css/less-style.css" rel="stylesheet">	
+		<!-- Custom CSS -->
+		<link href="css/style.css" rel="stylesheet">
+		<!--[if IE]><link rel="stylesheet" href="css/ie-style.css"><![endif]-->
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="#">
+		<style>
+			.nav-tabs li a
+				{
+				background:none;
+				
+				}
+			.nav-tabs li.active
+				{
+				border-top-left-radius:10px;
+				border-top-right-radius:10px;
+				}
+			.nav-tabs li.active a 
+				{
+				border-top-left-radius:10px!important;
+				border-top-right-radius:10px!important;
+				}
+			.nav-tabs li a 
+				{
+				border:none!important;
+				}
+			.nav-tabs li a:hover
+				{
+				background:#ddd;
+				border-top-left-radius:10px!important;
+				border-top-right-radius:10px!important;
+				color:#000;
+				}
+			.tab-content 
+				{
+				background:#fff;
+				border-left:1px solid #eee;
+				border-right:1px solid #eee;
+				border-bottom:1px solid #eee;
+				}
+
+			h2 {
+				display: block;
+				text-align: center;
+			}
+			
+			.example {
+				margin: 0 0 10px 0;
+			}
+			
+			
+			#verse-tab button, #adjustText-tab button, #fonts-tab button {
+				display: inline-block;
+				margin-bottom: 5px;
+				font-size: 21px;
+			}
+		
+
+			
+			#preview {
+				min-height: 200px;
+				background-color: #EFEFEF;
+				font-family: 'Impact', cursive;
+				overflow-y: auto;
+				text-shadow: 1px 1px 5px #777777;
+				line-height:100%;
+			}
+		
+			#preview img {
+				max-width: 100%;
+			}
+		
+			.mg-controls 
+				{
+				display:none;
+				}
+			
+			.img-select 
+				{
+				height:100px;
+				}
+		
+		
+			input, select	
+				{
+				height:34px;
+				}
+		
+			.top-ad	{
+				float:right;
+				height:90px;
+				width:65%;
+			}
+			
+			input#keyword	{
+				height:40px;
+				width:250px;
+				font-size:21px;
+				display:inline-block;
+			}
+		
+			select#version 	{
+				height:40px;
+				font-size:15px;
+				width:250px;
+				display:inline-block;
+				vertical-align:top;
+			}
+		
+			button#verseSearch	{
+				height:40px;
+				font-size:19px;
+				vertical-align:top;
+			}
+
+			button.btn
+				{
+				font-size:21px;
+				margin:2px;
+				}
+		
+		
+		@media only screen and (max-device-width: 639px) {
+			body	{
+				font-size:35px;
+				}
+			h4	{
+				font-size: 37px;
+				font-weight:bold;
+				}
+			h5{
+				font-size: 21px;
+				}
+			.btn	{
+				font-size:35px;
+				}
+			
+			#fonts-tab button, #adjustText-tab button	{
+				font-size:35px;
+				}
+			
+			#verse-tab button	{
+				font-size:35px;
+				}
+			
+			.img-select 
+				{
+				height:150px;
+				}
+			
+			input, select	
+				{
+				height:60px;font-size:35px;margin-top:5px;
+				}
+			
+			.mg-image	
+				{
+				width:100%!important;
+				}
+			
+			.preview img 
+				{
+				width:100%;
+				}
+		
+			.top-ad	{
+				float:right;
+				height:90px;
+				width:65%;
+				}
+			
+			#logo	{
+				width:250px;
+				float:left;
+				}
+	
+		
+			.header	{
+				padding:5px 20px 0px 20px;
+				border-bottom:1px solid #e5e5e5;
+				height:100px;	
+				}
+		
+			.body	{
+				margin: 10px auto;
+				float:none;
+				}
+		
+			.save	{
+				margin-top:-20px;
+			}
+	
+			.share	{
+				display:none;
+			}
+			
+			h3 small{
+				font-size:42px;
+				margin-left:15px;
+			}
+			
+			.col-sm-4	{
+				display:block;
+				clear:both;
+				width:100%;
+			}
+			
+			.container	{
+				min-width: 90%;
+			}
+			
+			input#keyword	{
+				height:80px;
+				width:80%;
+				font-size:62px;
+				margin-bottom:10px;
+				}
+			
+			select#version 	{
+				height:60px;
+				width:60%;
+				font-size:42px;				
+				}
+			
+			button#verseSearch	{
+				height:80px;
+				font-size:42px;
+				vertical-align:top;
+			}
+
+			button.btn
+				{
+				font-size:15px;
+				margin:2px;
+				}
+		}
+		</style>
+	</head>
+	
+	<body>
+		
+			
+		
+		<!-- Page Wrapper -->
+		<div class="wrapper">
+		
+			<!-- Header Start -->
+			
+			<div class="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-sm-8">
+							<!-- Link -->
+							<a href="index.html">
+								<!-- Logo area -->
+								<div class="logo">
+									<img class="img-responsive" src="img/Art-icon.png" alt="" />
+									<!-- Heading -->
+									<h1>QuikMemes</h1>
+									<!-- Paragraph -->
+									<p style="padding-left:10px">Memes Made Easy!</p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="btn-cart-md" style="margin-top:20px">
+								<a class="cart-link-disabled" href="/members/">
+									<span style="display:block;font-size:16px;font-family:'Open Sans Condensed', sans-serif;color:#9a9a9a;font-weight:700;"><!-- Sign up for QuickMemes Pro! --></span>
+								</a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+
+					</div>
+				</div> <!-- / .container -->
+			</div>
+			
+			<!-- Header End -->			
+			
+			
+			<!-- Inner Content -->
+			<div class="inner-page padd">
+			
+				<!-- General Info Start -->
+				
+				<div class="general" style="margin-top:0">
+					<div class="container" style="min-width:90%">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<!-- General Sidebar image -->
+								<div class="general-img example save" style="margin-top:-20px">
+									<h2>Edit here<small><br><span id="debug">...mouse over to see editing tools...</span></small></h2>
+									<img src="images/small/red.jpg" id="example-save" class="img img-responsive">
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<!-- General information content -->
+								<div class="general-content" style="background:none;border:none">
+									<!-- Navigation tab -->
+									<ul class="nav nav-tabs" id="designTabs">
+										<li class="active" data-target="#tab1"><a style="cursor:pointer">Text</a></li>
+										<li data-target="#tab2"><a style="cursor:pointer">Background</a></li>
+										<li data-target="#tab3"><a style="cursor:pointer">Fonts</a></li>
+										<li data-target="#tab4"><a style="cursor:pointer">Adjust Text</a></li>
+										<li data-target="#tab5"><a style="cursor:pointer">Create</a></li>					
+									</ul>
+									<!-- Tab content -->
+									<div class="tab-content">
+										<!-- In "id", use the value which you used in above anchor tags -->
+										<div class="tab-pane active" id="tab1">
+											<!-- Heading -->
+											<h5 style="margin-bottom:10px">Step 1. Add your text...</h5>											
+											<form>
+												<textarea  class="form-control" name="text1" type="text" id="text1" placeholder="First text area..." style="margin-bottom:10px;height:180px;"></textarea>
+												<textarea  class="form-control" name="text2" type="text" id="text2" placeholder="Second text area..." style="margin-bottom:10px;height:180px;"></textarea>
+												<button type="submit" value="Search" class="btn btn-success" id="verseSearch" style="float:right">Apply</button>
+												<div style="clear:both"></div>
+											</form>
+										</div> <!--/ tab-pane end --> 
+										<div class="tab-pane" id="tab2">
+											<!-- heading -->
+											<h5 style="margin-bottom:10px">Step 2. Select a background...</h5>
+												
+						<div class="col-xs-3 img-select">
+						<img src="images/small/black.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/black.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+						<div class="col-xs-3 img-select">
+						<img src="images/small/blue.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/blue.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+						<div class="col-xs-3 img-select">
+						<img src="images/small/green.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/green.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+						<div class="col-xs-3 img-select">
+						<img src="images/small/grey.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/grey.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+						<div class="col-xs-3 img-select">
+						<img src="images/small/red.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/red.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+						<div class="col-xs-3 img-select">
+						<img src="images/small/spots_1510775868.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/spots_1510775868.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+						<div class="col-xs-3 img-select">
+						<img src="images/small/sunrise.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/sunrise.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+						<div class="col-xs-3 img-select">
+						<img src="images/small/white.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/white.jpg");
+									setTimeout("replaceText()",50);'>
+						</div>
+											<div style="clear:both">
+											</div>
+										</div> <!--/ tab-pane end --> 
+										<div class="tab-pane" id="tab3">
+											<!-- heading -->
+											<h5 style="margin-bottom:10px">Step 3. Select a font...</h5>
+											<button class="btn btn-success font" id="selectFont3" style="font-family: 'Architects Daughter', cursive;">Architects Daughter</button>
+											<button class="btn btn-success font" id="selectFont12" style="font-family: 'Cinzel', serif;">Cinzel</button>
+											<button class="btn btn-success font" id="selectFont9" style="font-family: 'Oregano', cursive;">Oregano</button>
+											<button class="btn btn-success font" id="selectFont27" style="font-family: 'Open Sans Condensed', sans-serif;">Open Sans Condensed</button>
+											<button class="btn btn-success font" id="selectFont11" style="font-family: 'Playfair Display', serif;">Playfair Display</button>
+											<button class="btn btn-success font" id="selectFont30" style="font-family: 'Poiret One', cursive;">Poiret One</button>
+											<button class="btn btn-success font" id="selectFont29" style="font-family: 'Quicksand', sans-serif;">Quicksand</button>
+											<button class="btn btn-success font" id="selectFont25" style="font-family: 'IM Fell English', serif;">IM Fell English</button>
+											<button class="btn btn-success font" id="selectFont16" style="font-family: 'Special Elite', cursive;">Special Elite</button>
+											<button class="btn btn-success font" id="selectFont30" style="font-family: 'Alfa Slab One', cursive;">Alfa Slab One</button>
+											<button class="btn btn-success font" id="selectFont30" style="font-family: 'Luckiest Guy', cursive;">Luckiest Guy</button>
+											<button class="btn btn-success font" id="selectFont30" style="font-family: 'Changa One', cursive;">Changa One</button>
+										</div> <!--/ tab-pane end --> 
+										<div class="tab-pane" id="tab4">
+											<!-- heading -->
+											<h5 style="margin-bottom:10px">Step 4. Adjust the text...</h5>											
+											<button class="btn btn-success size" id="bigger">Make Text Bigger <i class="fa fa-sort-asc"></i></button>
+											<button class="btn btn-success size" id="smaller">Make Text Smaller <i class="fa fa-sort-down"></i></button><br>
+											<button class="btn btn-success color" id="black">Make Text Black <i class="fa fa-paint-brush"></i></button>
+											<button class="btn btn-success color" id="white">Make Text White <i class="fa fa-paint-brush"></i></button><br>
+											<button class="btn btn-success shadow" id="shadow-off">Turn shadow off <i class="fa fa-lightbulb-o"></i></button>
+											<button class="btn btn-success shadow" id="shadow-on">Turn shadow on <i class="fa fa-lightbulb-o"></i></button><br>
+											Mouse over the Edit Box to adjust the position and width of the text
+										</div> <!--/ tab-pane end --> 
+										<div class="tab-pane" id="tab5">
+											<!-- heading -->
+											<h5 style="margin-bottom:10px">Step 5. Create and download the image...</h5>
+											<div class="row">
+												<div class="col-md-12 text-center" id="preview"></div>
+												<div class="col-md-6">Right-click on image and select save picture as...<br>
+													<span id="share" style="display:none">
+														Share to: <a href="" class="facebook" target="_blank">Faceboook</a>
+													</span>
+												</div>
+												<div class="col-md-6 text-right" style="margin-top:5px">
+													<button class="btn btn-success" id="render">Render Image</button>
+												</div>
+											</div>
+										</div> <!--/ tab-pane end --> 
+									</div><!--/ Tab content end -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- General Info End -->
+			
+
+				
+			</div><!-- / Inner Page Content End -->	
+			
+			<!-- Footer Start -->
+			
+			<div class="footer padd">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<!-- Footer widget -->
+							<div class="footer-widget">
+								<!-- Logo area -->
+								<div class="logo">
+									<img class="img-responsive" src="img/Art-icon.png" alt="" />
+									<!-- Heading -->
+									<h1>QuikMemes</h1>
+								</div>
+								<!-- Paragraph -->
+								<p>A service provided by Danny Carlton</p>
+								<hr />
+							</div> <!--/ Footer widget end -->
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<!-- Footer widget -->
+							<div class="footer-widget">
+								<h4>General Sites by Danny Carlton</h4>
+								<ul class="list-unstyled list-gray">
+									<li><a href="https://DannyCarlton.net" target="_blank" title="My Books">DannyCarlton.net</a></li>
+									<li><a href="https://DannyCarlton.org" target="_blank" title="My Sites">DannyCarlton.org</a></li>
+									<li><a href="https://DannyCarlton.com" target="_blank" title="My Web Development Site">DannyCarlton.com</a></li>
+									<li><a href="https://BernellsKitchen.com" target="_blank" title="My Mother's Recipes">BernellsKitchen.com</a></li>
+									<li><a href="https://RedPrimer.com" target="_blank" title="A Book I Scanned and placed Online">RedPrimer.com</a></li>
+									<li><a href="https://bythefireplace.com" target="_blank" title="My Online Library">ByTheFirePlace.com</a></li>
+									<li><a href="https://helpwithfriends.com" target="_blank" title="Find Words to Use with Words Woth Friends">HelpWithFriends.com</a></li>
+									<li><a href="https://incatoosa.com" target="_blank" title="Local Businesses and Organizations">inCatoosa.com</a></li>
+									<li><a href="https://ppppppp.org" target="_blank" title="How to Pick the Perfect Profession">The 7 P's</a></li>
+								</ul>
+							</div> <!--/ Footer widget end -->
+						</div>
+						<div class="clearfix visible-sm"></div>
+						<div class="col-md-3 col-sm-6">
+							<!-- Footer widget -->
+							<div class="footer-widget">
+								<!-- Heading -->
+								<h4>Ministry Sites by Danny Carlton</h4>
+								<ul class="list-unstyled list-gray">
+									<li><a href="https://phpBible.org" target="_blank">phpBible.org</a></li>
+									<li><a href="https://KJBible.org" target="_blank">KJBible.org</a></li>
+									<li><a href="https://myopenbible.org" target="_blank">MyOpenBible.org</a></li>
+									<li><a href="https://SpurgeonsMorningAndEvening.com" target="_blank">SpurgeonsMorningAndEvening.com</a></li>
+									<li><a href="https://NavesTopicalBible.org" target="_blank">NavesTopicalBible.org</a></li>
+									<li><a href="https://DidYouPrayFirst.org" target="_blank">DidYouPrayFirst.org</a></li>
+									<li><a href="https://CountryHymns.com" target="_blank">CountryHymns.com</a></li>
+								</ul>
+							</div> <!--/ Footer widget end -->
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<!-- Footer widget -->
+							<div class="footer-widget">
+								<!-- Heading -->
+								<h4>Books by Danny Carlton</h4>
+								<ul class="list-unstyled list-gray">
+									<li><a href="https://memoriterogue.com" target="_blank">Memorite Rogue</a></li>
+									<li><a href="https://dannycarlton.net#earth-suit" target="_blank">Earth Suit</a></li>
+									<li><a href="https://dannycarlton.net#emotional-energy" target="_blank">Emotional Energy</a></li>
+									<li><a href="https://liberallogic101.com" target="_blank">Liberal Logic 101</a></li>
+								</ul>
+							</div> <!--/ Footer widget end -->
+						</div>
+					</div>
+					<!-- Copyright -->
+					<div class="footer-copyright">
+						<!-- Paragraph -->
+						<p>&copy; Copyright 2021 <a href="https://DannyCarlton.org">Danny Carlton</a></p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Footer End -->
+			
+		</div><!-- / Wrapper End -->
+		
+		
+		<!-- Scroll to top -->
+		<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> 
+		
+		
+		
+		<!-- Javascript files -->
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Pretty Photo JS -->
+		<script src="js/jquery.prettyPhoto.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+		<!-- JS code for this page -->
+		
+	
+		<script>
+		var verse='';
+		var ref='';
+		var newfont='';
+		var fontSize=40;
+		var fontColor="#FFFFFF";
+		var dropShadow=true;
+		
+		$("img.lazy").lazyload({effect : "fadein"});
+		
+		$(document).ready(function(){
+			$(".nav-tabs li").click(function(){
+				$(this).tab('show');
+			})
+		})
+		
+		
+		$("#verseSearch").click(function(e){
+			e.preventDefault();
+			var keyword=$("#text1").val();
+			var version=$("#text2").val();
+			verse=keyword;
+			ref=version;
+			setTimeout('replaceText()',50);
+			
+		});
+		
+		
+		$(".verse").click(function(e){
+			e.preventDefault();
+			var keyword=$(this).text();
+			verse=$(this).attr('data-quote');
+			ref='Reference';
+			setTimeout('replaceText()',50);
+			
+		});
+		
+		
+		
+		$(".example.save img").memeGenerator({
+			useBootstrap: true,
+			defaultTextStyle: {font: "Dancing Script",size:fontSize,forceUppercase:false,borderWidth:0},
+			showAdvancedSettings: false
+		});		
+		
+		
+		$("#render").click(function(e){
+			e.preventDefault();
+			
+			var imageDataUrl = $("#example-save").memeGenerator("save");
+			
+			$("#preview").html(
+				$("<img>").attr("src", imageDataUrl)
+			);
+			
+		$("#save").css("display", "inline-block");
+			
+		});
+		
+		$("#download").click(function(e){
+			e.preventDefault();
+			
+			$("#example-save").memeGenerator("download");
+		});
+		
+		
+		$("#save").click(function(e){
+			e.preventDefault();
+			var imageDataUrl = $("#example-save").memeGenerator("save");
+			
+			$.ajax({
+				url: "ajax/save.php",
+				type: "POST",
+				data: {image: imageDataUrl},
+				dataType: "json",
+				success: function(response){
+					$("#preview").html(
+						$("<img>").attr("src", response.filename)
+					);
+					$("a.facebook").attr("href","https://www.facebook.com/sharer/sharer.php?u=http%3A//myBibleMemes.com/"+response.url);
+				}
+			});
+		$("#share").css("display", "inline-block");
+		});
+		
+		
+		
+		
+		$(".font").click(function(e){
+			e.preventDefault();
+      var detectFont = $(this).css('font-family');
+			newfont=detectFont;			
+			$(".example.save img").memeGenerator("setFont");
+			setTimeout('replaceText()',50);
+		})
+		
+		
+		$(".size").click(function(e){
+			e.preventDefault();
+      if($(this).attr('id')=='bigger')
+				{
+				fontSize++;
+				}
+			else if($(this).attr('id')=='smaller')
+				{
+				fontSize--;
+				}
+			$(".example.save img").memeGenerator("setSize");
+			setTimeout('replaceText()',50);
+		})
+		
+		
+		$(".color").click(function(e){
+			e.preventDefault();
+      if($(this).attr('id')=='black')
+				{
+				fontColor="#000000";
+				}
+			else if($(this).attr('id')=='white')
+				{
+				fontColor="#FFFFFF";
+				}
+			$(".example.save img").memeGenerator("setColor");
+			setTimeout('replaceText()',50);
+		})
+		
+		
+		$(".shadow").click(function(e){
+			e.preventDefault();
+      if($(this).attr('id')=='shadow-on')
+				{
+				dropShadow=true;
+				}
+			else if($(this).attr('id')=='shadow-off')
+				{
+				dropShadow=false;
+				}
+			setTimeout('replaceText()',50);
+		})
+		
+		
+		function replaceText()
+			{
+			
+			var layerName='layer1';
+			var layer = $(".mg-controls").find("[data-layer='" + layerName + "']");
+			var input = layer.find('.mg-textbox-text');
+			input.attr("value", verse);
+			input.attr("data-text", verse);
+			var input2 = layer.find('.mg-textbox-size');
+			input2.attr("value", fontSize);
+			var colorinput = layer.find(".mg-textbox-text-color");
+			colorinput.attr("value", fontColor);			
+			input.trigger("change");
+				
+			var layerName='layer2';
+			var layer = $(".mg-controls").find("[data-layer='" + layerName + "']");
+			var input = layer.find('.mg-textbox-text');
+			input.attr("value", ref);
+			input.attr("data-text", ref);
+			var input2 = layer.find('.mg-textbox-size');
+			input2.attr("value", fontSize);
+			var colorinput = layer.find(".mg-textbox-text-color");
+			colorinput.attr("value", fontColor);
+			input.trigger("change");
+			
+			
+			var im=document.getElementsByTagName("img")[1];
+			var y=im.height-5;
+			var c=document.getElementsByTagName("canvas")[0];
+			var ctx = c.getContext("2d");
+			ctx.font = "12px Arial";
+			if (dropShadow)
+				{
+				ctx.shadowOffsetX = 1;
+				ctx.shadowOffsetY = 1;
+				ctx.shadowBlur = 3;
+				ctx.shadowColor = "#000000";
+				}
+			//ctx.fillText("http://myBibleMemes.com",80,y);
+			}
+			
+			
+			setTimeout('replaceText()',50);
+
+		
+		//
+		</script>
+
+	</body>	
+</html>
