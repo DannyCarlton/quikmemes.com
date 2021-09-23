@@ -31,10 +31,6 @@ p{
 	line-height: 23px;
 }
 
-a{
-
-}
-
 a:hover{
 	text-decoration: none;
 }
@@ -42,10 +38,6 @@ a:hover{
 a:hover,a:active,a:focus {
 	outline: 0;
 	text-decoration: none;
-}
-
-hr{
-
 }
 
 :focus {
@@ -924,7 +916,6 @@ table { background: #fff; }
 
 .testimonial .testimonial-item .quote {
 	top: 95px;
-	display: inline-block;
 	width: 100px;
 	font-size: 200px;
 	line-height: 0px;
