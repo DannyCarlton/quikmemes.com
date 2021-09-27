@@ -881,15 +881,26 @@
 				var c=document.getElementsByTagName("canvas")[0];
 				var y=c.height-5;
 				var ctx = c.getContext("2d");
-				ctx.font = "12px Arial";
+				ctx.font = "11.5px Arial";
 				if (dropShadow)
 					{
-					ctx.shadowOffsetX = 1;
-					ctx.shadowOffsetY = 1;
-					ctx.shadowBlur = 10;
+					ctx.shadowOffsetX = 0;
+					ctx.shadowOffsetY = 0;
+					ctx.shadowBlur = 0;
 					ctx.shadowColor = "#000000";
 					}
-				//ctx.fillText("http://myBibleMemes.com",78,y);
+				if(branding_color)
+					{
+					ctx.fillStyle = "rgba(255,255,255, 0.7)";
+					}
+				else 
+					{
+					ctx.fillStyle = "rgba(0,0,0, 0.7)";
+					}
+				var ctext = "      Created with QuikMemes.com".split("").join(String.fromCharCode(8202))
+				ctx.fillText(ctext, 85, y);
+				//ctx.fillText("      Created with QuikMemes.com",80,y);
+				console.log(ctx);
 				
 				MG.canvasContainer.find("canvas").each(function(){  
 					imageContext.drawImage(this, 0, 0, MG.originalSize[0], MG.originalSize[1]);
