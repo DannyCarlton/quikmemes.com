@@ -22,15 +22,15 @@
 
 		<!-- jQuery -->
 		<!script src="js/jquery.js"></script>
-		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
 		<script src="jquery.ui.touch-punch.min.js"></script>
 		<script src="js/jquery.lazyload.js"></script>
 		<script type="text/javascript" src="jquery.memegenerator.js?1.5"></script>
 		<link rel="stylesheet" type="text/css" href="jquery.memegenerator.css">
-		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     	<link rel="stylesheet" href="css/font-awesome.min.css">
 		<link href="//fonts.amplighter.com/css?family=Architects+Daughter|Cinzel|Open+Sans+Condensed:300|Playfair+Display|Poiret+One|Quicksand|IM+Fell+English|Oregano|Special+Elite|Spirax|Alfa+Slab+One|Luckiest+Guy|Changa+One" rel="stylesheet">
 		
@@ -386,35 +386,35 @@
 											<h5 style="margin-bottom:10px">Step 2. Select a background...</h5>
 												
 						<div class="col-xs-3 img-select">
-						<img src="images/small/black.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/black.jpg");
+						<img src="images/small/black.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/black.jpg");branding_color=1;
 									setTimeout("replaceText()",50);'>
 						</div>
 						<div class="col-xs-3 img-select">
-						<img src="images/small/blue.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/blue.jpg");
+						<img src="images/small/blue.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/blue.jpg");branding_color=1;
 									setTimeout("replaceText()",50);'>
 						</div>
 						<div class="col-xs-3 img-select">
-						<img src="images/small/green.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/green.jpg");
+						<img src="images/small/green.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/green.jpg");branding_color=1;
 									setTimeout("replaceText()",50);'>
 						</div>
 						<div class="col-xs-3 img-select">
-						<img src="images/small/grey.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/grey.jpg");
+						<img src="images/small/grey.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/grey.jpg");branding_color=1;
 									setTimeout("replaceText()",50);'>
 						</div>
 						<div class="col-xs-3 img-select">
-						<img src="images/small/red.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/red.jpg");
+						<img src="images/small/red.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/red.jpg");branding_color=1;
 									setTimeout("replaceText()",50);'>
 						</div>
 						<div class="col-xs-3 img-select">
-						<img src="images/small/spots_1510775868.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/spots_1510775868.jpg");
+						<img src="images/small/spots_1510775868.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/spots_1510775868.jpg");branding_color=1;
 									setTimeout("replaceText()",50);'>
 						</div>
 						<div class="col-xs-3 img-select">
-						<img src="images/small/sunrise.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/sunrise.jpg");
+						<img src="images/small/sunrise.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/sunrise.jpg");branding_color=0;
 									setTimeout("replaceText()",50);'>
 						</div>
 						<div class="col-xs-3 img-select">
-						<img src="images/small/white.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/white.jpg");
+						<img src="images/small/white.jpg" class="img-responsive lazy" onclick='$("#example-save").attr("src", "images/small/white.jpg");branding_color=0;
 									setTimeout("replaceText()",50);'>
 						</div>
 											<div style="clear:both">
@@ -581,6 +581,7 @@
 		var fontSize=40;
 		var fontColor="#FFFFFF";
 		var dropShadow=true;
+		var branding_color=1;
 		
 		$("img.lazy").lazyload({effect : "fadein"});
 		
@@ -716,8 +717,7 @@
 		
 		
 		function replaceText()
-			{
-			
+			{			
 			var layerName='layer1';
 			var layer = $(".mg-controls").find("[data-layer='" + layerName + "']");
 			var input = layer.find('.mg-textbox-text');
@@ -745,17 +745,26 @@
 			var y=im.height-5;
 			var c=document.getElementsByTagName("canvas")[0];
 			var ctx = c.getContext("2d");
-			ctx.font = "12px Arial";
+			ctx.font = "11px Arial";
 			if (dropShadow)
 				{
-				ctx.shadowOffsetX = 1;
-				ctx.shadowOffsetY = 1;
-				ctx.shadowBlur = 3;
+				ctx.shadowOffsetX = 0;
+				ctx.shadowOffsetY = 0;
+				ctx.shadowBlur = 0;
 				ctx.shadowColor = "#000000";
 				}
-			//ctx.fillText("http://myBibleMemes.com",80,y);
-			}
-			
+			if(branding_color)
+				{
+				ctx.fillStyle = "rgba(255,255,255, 0.7)";
+				}
+			else 
+				{
+				ctx.fillStyle = "rgba(0,0,0, 0.7)";
+				}
+			var ctext = "      Created with QuikMemes.com".split("").join(String.fromCharCode(8202))
+			ctx.fillText(ctext, 80, y);
+			//ctx.fillText("      Created with QuikMemes.com",80,y);
+			}		
 			
 			setTimeout('replaceText()',50);
 
