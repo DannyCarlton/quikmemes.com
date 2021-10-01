@@ -373,10 +373,11 @@
 										<!-- In "id", use the value which you used in above anchor tags -->
 										<div class="tab-pane active" id="tab1">
 											<!-- Heading -->
-											<h5 style="margin-bottom:10px">Step 1. Add your text...</h5>											
+											<h5 style="margin-bottom:10px">Step 1. Add your text... <span id="text1_special_characters" title="useful characters not on most keyboards" style="font-size:25px;float:right"><span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text1'), '&ldquo;')">&ldquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text1'), '&rdquo;')">&rdquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text1'), '&lsquo;')">&lsquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text1'), '&rsquo;')">&rsquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text1'), '&mdash;')">&mdash;</span></span></h5>											
 											<form>
-												<textarea  class="form-control" name="text1" type="text" id="text1" placeholder="First text area..." style="margin-bottom:10px;height:180px;"></textarea>
-												<textarea  class="form-control" name="text2" type="text" id="text2" placeholder="Second text area..." style="margin-bottom:10px;height:180px;"></textarea>
+												<textarea  class="form-control" name="text1" type="text" id="text1" placeholder="First text area..." style="font-size:17px;margin-bottom:10px;height:135px;color:#000!important;"></textarea>
+												<h5><span id="text2_special_characters" title="useful characters not on most keyboards" style="font-size:25px;float:right"><span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text2'), '&ldquo;')">&ldquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text2'), '&rdquo;')">&rdquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text2'), '&lsquo;')">&lsquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text2'), '&rsquo;')">&rsquo;</span> &nbsp; <span style="cursor:pointer" onclick="insertAtCursor(document.getElementById('text2'), '&mdash;')">&mdash;</span></span></h5>
+												<textarea  class="form-control" name="text2" type="text" id="text2" placeholder="Second text area..." style="font-size:17px;margin-bottom:10px;height:135px;color:#000!important;"></textarea>
 												<button type="submit" value="Search" class="btn btn-success" id="verseSearch" style="float:right">Apply</button>
 												<div style="clear:both"></div>
 											</form>
@@ -590,6 +591,8 @@
 				$(this).tab('show');
 			})
 		})
+
+
 		
 		
 		$("#verseSearch").click(function(e){
@@ -767,6 +770,31 @@
 			}		
 			
 			setTimeout('replaceText()',50);
+
+
+		function insertAtCursor(myField, myValue) 
+			{
+			//IE support
+			if (document.selection) 
+				{
+				myField.focus();
+				sel = document.selection.createRange();
+				sel.text = myValue;
+				}
+			//MOZILLA and others
+			else if (myField.selectionStart || myField.selectionStart == '0') 
+				{
+				var startPos = myField.selectionStart;
+				var endPos = myField.selectionEnd;
+				myField.value = myField.value.substring(0, startPos)
+					+ myValue
+					+ myField.value.substring(endPos, myField.value.length);
+				} 
+			else 
+				{
+				myField.value += myValue;
+				}
+			}
 
 		
 		//
